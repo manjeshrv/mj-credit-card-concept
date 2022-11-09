@@ -9,10 +9,14 @@
 @import './base/typography';
 
 // Import Components
+@import './components/btn';
+@import './components/credit-card';
 
 // Import Layouts
-@import './layout/header';
+@import './layout/container';
 @import './layout/footer';
+@import './layout/grid';
+@import './layout/header';
 
 // Import Pages
 @import './pages/home';

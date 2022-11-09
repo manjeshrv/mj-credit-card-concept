@@ -1,0 +1,106 @@
+.credit-card {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  color: #fff;
+  font-weight: 500;
+
+  &__front,
+  &__back,
+  &__shadow {
+    width: 100%;
+    max-width: 48rem;
+    aspect-ratio: 16 / 9;
+    border-radius: 1.6rem;
+    position: absolute;
+  }
+
+  &__front,
+  &__back {
+    background-image: linear-gradient(
+      to right bottom,
+      $color-primary-500,
+      $color-primary-700
+    );
+    background-size: 120%;
+    padding: 3.2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__front {
+    transform: translate(-8rem, -8rem);
+    z-index: 3;
+  }
+
+  &__back {
+    z-index: 2;
+  }
+
+  &__shadow {
+    background-color: rgba($color-primary-500, 0.3);
+    transform: translate(8rem, 8rem);
+    z-index: 1;
+  }
+
+  &__chip {
+    max-width: 6rem;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__num {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__num-item {
+    font-size: 2rem;
+
+    letter-spacing: 0.8rem;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__details {
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    color: $color-primary-100;
+    font-size: 1.2rem;
+  }
+
+  &__value {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+  }
+
+  &__magnet-stripe {
+    display: inline-block;
+    width: calc(100% + 6.4rem);
+    height: 6rem;
+    background-color: #333;
+    margin-left: -3.2rem;
+  }
+
+  &__caution-text {
+    font-size: 1.2rem;
+    color: $color-primary-100;
+
+    span {
+      color: #fff;
+      font-weight: 700;
+    }
+  }
+
+  &__visa-logo {
+  }
+}

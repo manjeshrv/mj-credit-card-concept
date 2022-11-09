@@ -1,0 +1,41 @@
+.btn {
+  font-weight: 500;
+  font-size: 1.6rem;
+  font-family: inherit;
+  padding: 1.2rem 2.4rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s all ease;
+
+  // Hover styling
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  // Active styling
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &--primary {
+    color: #fff;
+    background-image: linear-gradient(
+      to right,
+      $color-primary-500,
+      $color-primary-700
+    );
+    background-size: 110%;
+
+    // Hover styling
+    &:hover {
+      box-shadow: 0 1.6rem 3.2rem rgba($color-primary-500, 0.2);
+    }
+
+    // Hover styling
+    &:active {
+      box-shadow: 0 0.8rem 1.6rem rgba($color-primary-500, 0.4);
+    }
+  }
+}

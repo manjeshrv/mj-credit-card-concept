@@ -57,3 +57,10 @@
     } //1399px
   }
 }
+
+// HOVER
+@mixin respondHover {
+  @media (hover: hover) {
+    @content;
+  }
+}
