@@ -1,10 +1,11 @@
 .section-hero {
   padding-top: clamp(10rem, 6.5823rem + 9.4937vw, 16rem);
   padding-bottom: 6rem;
+  position: relative;
+  overflow: hidden;
 
   @include respondMin(lg) {
     height: 100vh;
-    overflow: hidden;
   }
 
   &__content {
@@ -26,6 +27,32 @@
 
     @include respondMin(lg) {
       height: clamp(34.64rem, -3.1435rem + 38.0882vw, 45rem);
+    }
+  }
+
+  &__blur {
+    position: absolute;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: $color-primary-200;
+    z-index: -1;
+    filter: blur(20rem);
+    opacity: 0.4;
+
+    &--1 {
+      width: clamp(50rem, 32.6923rem + 48.0769vw, 100rem);
+      height: clamp(50rem, 32.6923rem + 48.0769vw, 100rem);
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    &--2 {
+      width: clamp(50rem, 32.6923rem + 48.0769vw, 100rem);
+      height: clamp(50rem, 32.6923rem + 48.0769vw, 100rem);
+      bottom: 0;
+      right: 0;
+      transform: translate(50%, 50%);
     }
   }
 }
