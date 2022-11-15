@@ -1,18 +1,18 @@
 .credit-card {
   width: 100%;
   aspect-ratio: 16 / 9;
-  position: relative;
   color: #fff;
   font-weight: 500;
 
   &__front,
   &__back,
   &__shadow {
-    width: 100%;
+    width: 80%;
     max-width: 48rem;
     aspect-ratio: 16 / 9;
-    border-radius: 1.6rem;
-    position: absolute;
+    border-radius: clamp(1rem, 0.2059rem + 2.2059vw, 1.6rem);
+    margin: auto;
+    position: relative;
   }
 
   &__front,
@@ -23,48 +23,90 @@
       $color-primary-700
     );
     background-size: 120%;
-    padding: 3.2rem;
-
+    padding: clamp(1.2rem, -1.4471rem + 7.3529vw, 3.2rem);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include respondMin(lg) {
+      padding: clamp(2.2rem, -1.4471rem + 3.6765vw, 3.2rem);
+    }
   }
 
   &__front {
-    transform: translate(-8rem, -8rem);
-    z-index: 3;
+    z-index: 15;
+    transform: translateX(
+      calc(-1 * (clamp(3rem, -0.7059rem + 10.2941vw, 5.8rem)))
+    );
+
+    @include respondMin(lg) {
+      transform: translateX(
+        calc(-1 * (clamp(4.4rem, -0.7059rem + 5.1471vw, 5.8rem)))
+      );
+    }
   }
 
   &__back {
-    z-index: 2;
+    z-index: 10;
+    transform: translateY(
+      calc(-1 * (clamp(10rem, -0.5882rem + 29.4118vw, 18rem)))
+    );
+
+    @include respondMin(lg) {
+      transform: translateY(
+        calc(-1 * (clamp(14rem, -0.5882rem + 14.7059vw, 18rem)))
+      );
+    }
   }
 
   &__shadow {
+    transform: translate(
+      clamp(3rem, -0.7059rem + 10.2941vw, 5.8rem),
+      calc(-1 * (clamp(20rem, -1.1765rem + 58.8235vw, 36rem)))
+    );
     background-color: rgba($color-primary-500, 0.3);
-    transform: translate(8rem, 8rem);
-    z-index: 1;
+
+    @include respondMin(lg) {
+      transform: translate(
+        clamp(4rem, -2.5647rem + 6.6176vw, 5.8rem),
+        calc(-1 * (clamp(28rem, -1.1765rem + 29.4118vw, 36rem)))
+      );
+    }
   }
 
   &__chip {
-    max-width: 6rem;
+    width: clamp(3rem, -0.9706rem + 11.0294vw, 6rem);
     aspect-ratio: 1 / 1;
+
+    @include respondMin(lg) {
+      width: clamp(5rem, 1.3529rem + 3.6765vw, 6rem);
+    }
   }
 
   &__num {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: clamp(0.5rem, -1.4853rem + 5.5147vw, 2rem);
+
+    @include respondMin(lg) {
+      gap: clamp(1.2rem, -1.7176rem + 2.9412vw, 2rem);
+    }
   }
 
   &__num-item {
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 0.1412rem + 2.9412vw, 2rem);
+    letter-spacing: clamp(0.6rem, 0.0706rem + 1.4706vw, 1rem);
 
-    letter-spacing: 0.8rem;
+    @include respondMin(lg) {
+      font-size: clamp(1.6rem, 0.1412rem + 1.4706vw, 2rem);
+      letter-spacing: clamp(0.8rem, 0.0706rem + 0.7353vw, 1rem);
+    }
   }
 
   &__row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__details {
@@ -75,25 +117,43 @@
 
   &__label {
     color: $color-primary-100;
-    font-size: 1.2rem;
+    font-size: clamp(0.8rem, 0.2706rem + 1.4706vw, 1.2rem);
+
+    @include respondMin(lg) {
+      font-size: clamp(1rem, 0.2706rem + 0.7353vw, 1.2rem);
+    }
   }
 
   &__value {
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 0.2059rem + 2.2059vw, 1.6rem);
     text-transform: uppercase;
+
+    @include respondMin(lg) {
+      font-size: clamp(1.3rem, 0.2059rem + 1.1029vw, 1.6rem);
+    }
   }
 
   &__magnet-stripe {
     display: inline-block;
-    width: calc(100% + 6.4rem);
-    height: 6rem;
+    width: calc(100% + (clamp(2.4rem, -2.8941rem + 14.7059vw, 6.4rem)));
+    height: clamp(3rem, -0.9706rem + 11.0294vw, 6rem);
     background-color: #333;
-    margin-left: -3.2rem;
+    margin-left: calc(-1 * (clamp(1.2rem, -1.4471rem + 7.3529vw, 3.2rem)));
+
+    @include respondMin(lg) {
+      height: clamp(4.5rem, -0.9706rem + 5.5147vw, 6rem);
+      width: calc(100% + (clamp(4.4rem, -2.8941rem + 7.3529vw, 6.4rem)));
+      margin-left: calc(-1 * (clamp(2.2rem, -1.4471rem + 3.6765vw, 3.2rem)));
+    }
   }
 
   &__caution-text {
-    font-size: 1.2rem;
+    font-size: clamp(0.8rem, 0.2706rem + 1.4706vw, 1.2rem);
     color: $color-primary-100;
+
+    @include respondMin(lg) {
+      font-size: clamp(1rem, 0.2706rem + 0.7353vw, 1.2rem);
+    }
 
     span {
       color: #fff;
@@ -102,5 +162,10 @@
   }
 
   &__visa-logo {
+    width: clamp(3rem, -1.5rem + 12.5vw, 6.4rem);
+
+    @include respondMin(lg) {
+      width: clamp(4.7rem, -1.5rem + 6.25vw, 6.4rem);
+    }
   }
 }

@@ -1,1 +1,31 @@
+.section-hero {
+  padding-top: clamp(10rem, 6.5823rem + 9.4937vw, 16rem);
+  padding-bottom: 6rem;
 
+  @include respondMin(lg) {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &__content {
+    display: grid;
+    grid-gap: 3.2rem;
+
+    @include respondMin(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+  }
+
+  &__text {
+  }
+
+  &__media {
+    height: clamp(24.28rem, -3.1435rem + 76.1765vw, 45rem);
+    overflow: hidden;
+
+    @include respondMin(lg) {
+      height: clamp(34.64rem, -3.1435rem + 38.0882vw, 45rem);
+    }
+  }
+}
